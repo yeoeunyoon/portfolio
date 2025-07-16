@@ -1,42 +1,418 @@
-#root {
-  max-width: 1280px;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Layout */
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  padding-bottom: 120px;
+}
+
+/* Nav Bar - iPad */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.navbar-container {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px;
+  isolation: isolate;
+  
+  position: relative;
+  width: 672px;
+  height: 58px;
+}
+
+/* Platter background */
+.navbar-container::before {
+  content: '';
+  position: absolute;
+  height: 41px;
+  left: -1px;
+  right: 1px;
+  top: calc(50% - 41px/2 - 8.5px);
+  
+  background: #FFFFFF;
+  border-radius: 100px;
+  
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+/* Thin overlay */
+.navbar-container::after {
+  content: '';
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  
+  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background-blend-mode: color-dodge, normal;
+  backdrop-filter: blur(25px);
+  border-radius: 100px;
+  pointer-events: none;
+}
+
+.navbar-brand {
+  /* Sidebar */
+  width: 56px;
+  height: 32.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.brand-icon {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 15px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
   text-align: center;
+  letter-spacing: -0.23px;
+  color: #090909;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navbar-menu {
+  /* Stretch */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  
+  width: 552px;
+  height: 33px;
+  
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 1;
+  z-index: 2;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.23px;
+  color: #090909;
+  
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.navbar-item:nth-child(1) {
+  /* Tab 1 */
+  width: 90px;
+  height: 33px;
+  order: 0;
+}
+
+.navbar-item:nth-child(2) {
+  /* Tab 2 */
+  width: 66px;
+  height: 33px;
+  order: 1;
+}
+
+.navbar-item:nth-child(3) {
+  /* Tab 3 */
+  width: 127px;
+  height: 33px;
+  order: 2;
+}
+
+.navbar-item:nth-child(4) {
+  /* Tab 4 */
+  width: 87px;
+  height: 33px;
+  order: 3;
+}
+
+.navbar-item:nth-child(5) {
+  /* Tab 5 */
+  width: 82px;
+  height: 33px;
+  order: 4;
+}
+
+.navbar-item:nth-child(6) {
+  /* Tab 6 */
+  width: 50px;
+  height: 32.5px;
+  order: 5;
+  flex-grow: 1;
+}
+
+.navbar-item.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #007AFF;
+}
+
+.navbar-search {
+  /* Symbol Tab */
+  width: 56px;
+  height: 32.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+  z-index: 3;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 15px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.23px;
+  color: #090909;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-label {
+  display: block;
+}
+
+/* Page Control */
+.page-control {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  padding: 10px;
+}
+
+.page-control-container {
+  display: flex;
+  gap: 6px;
+}
+
+.page-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cccccc;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.page-dot:hover {
+  background-color: #999999;
+}
+
+.page-dot.active {
+  background-color: #000000;
+  transform: scale(1.3);
+}
+
+/* Home Page */
+.home-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Hey, I'm Jasmine! */
+.home-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2rem, 8vw, 62px);
+  line-height: 1.2;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 90vw;
+}
+
+/* 3D Avatar Image */
+.avatar-container {
+  width: clamp(200px, 30vw, 291px);
+  height: clamp(200px, 30vw, 298px);
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Wanna know more about me? */
+.home-subtitle {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 35px);
+  line-height: 1.2;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 90vw;
+}
+
+/* Click under the bar or tap right */
+.instruction-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.5vw, 20px);
+  line-height: 1.2;
+  color: #A3A3A3;
+  text-align: center;
+  margin-top: 1rem;
+  max-width: 90vw;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    width: 90vw;
+    max-width: 672px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .navbar-menu {
+    width: auto;
+    flex: 1;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .navbar-item {
+    font-size: 12px;
+    padding: 4px 8px;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  
+  .home-page {
+    padding: 10px;
+  }
+  
+  .home-title {
+    margin-bottom: 1.5rem;
+  }
+  
+  .avatar-container {
+    margin: 1.5rem 0;
+  }
+  
+  .home-subtitle {
+    margin-bottom: 0.5rem;
+  }
+  
+  .instruction-text {
+    margin-top: 0.5rem;
+  }
 }
