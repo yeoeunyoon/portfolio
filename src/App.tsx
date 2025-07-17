@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Home from './pages/Home';
 import Me from './pages/Me';
 import Experience from './pages/Experience';
+import Project from './pages/Project';
+import Skills from './pages/Skills';
+import Contact from './pages/Contact';
 import TabBar from './components/TabBar';
 import NavigationArrow from './components/NavigationArrow';
 import './App.css';
@@ -23,11 +26,11 @@ function App() {
       case 'experience':
         return <Experience />;
       case 'project':
-        return <div>Project Page</div>;
+        return  <Project />;
       case 'skills':
-        return <div>Skills Page</div>;
+        return <Skills />;
       case 'contact':
-        return <div>Contact Page</div>;
+        return <Contact />;
       default:
         return <Home />;
     }
