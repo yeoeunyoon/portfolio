@@ -1,0 +1,27 @@
+/* Page Control */
+.page-control {
+  width: 100px;
+  height: 24px;
+  background-color: #F5F5F5;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  outline: none;
+}
+
+.page-dot {
+  all: unset;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: #D9D9D9;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.page-dot.active {
+  background-color: #333333;
+} 

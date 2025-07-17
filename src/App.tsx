@@ -7,6 +7,8 @@ import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 import TabBar from './components/TabBar';
 import NavigationArrow from './components/NavigationArrow';
+import PageControl from './components/PageControl';
+import FluidCursor from './components/FluidCursor';
 import './App.css';
 
 function App() {
@@ -69,7 +71,12 @@ function App() {
         onClick={goToNextPage} 
         isVisible={showRightArrow}
       />
+      
+      {/* Page Control */}
+      <PageControl activePage={activeTab} onPageChange={setActiveTab} />
+
     </div>
+    
   );
 }
 
