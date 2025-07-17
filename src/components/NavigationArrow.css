@@ -2,8 +2,8 @@
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border: none;
   background: transparent;
   cursor: pointer;
@@ -49,48 +49,39 @@
   height: 50px;
   object-fit: contain;
   transition: all 0.3s ease;
-  
-  /* Multiple shadows to make white arrow visible */
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8)) 
-          drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9));
-  
-  /* Pulsing shadow animation */
-  animation: pulseShadow 2s ease-in-out infinite;
+  filter: brightness(0.8);
 }
 
-/* Hover effects */
+/* Hover effects - smooth slide animation */
 .nav-arrow:hover .arrow-image {
-  transform: scale(1.3);
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.9)) 
-          drop-shadow(0 12px 24px rgba(0, 0, 0, 0.7))
-          drop-shadow(0 3px 6px rgba(0, 0, 0, 1));
+  transform: translateX(5px);
+  filter: brightness(1);
 }
 
-/* Click effect - darker arrow color instead of border */
+.nav-arrow-left:hover .arrow-image {
+  transform: translateX(-5px);
+}
+
+/* Click effect */
 .nav-arrow:active .arrow-image {
-  transform: scale(0.95);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9)) 
-          drop-shadow(0 1px 2px rgba(0, 0, 0, 1))
-          brightness(0.8);
+  transform: translateX(2px);
+  filter: brightness(0.9);
 }
 
-/* Pulsing shadow animation */
-@keyframes pulseShadow {
-  0%, 100% {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8)) 
-            drop-shadow(0 4px 4px rgba(0, 0, 0, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.7)) 
-            drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
-  }
+.nav-arrow-left:active .arrow-image {
+  transform: translateX(-2px);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .nav-arrow {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .arrow-image {
+    width: 45px;
+    height: 45px;
   }
   
   .nav-arrow-left {
@@ -99,10 +90,5 @@
   
   .nav-arrow-right {
     right: 10px;
-  }
-  
-  .arrow-image {
-    width: 40px;
-    height: 40px;
   }
 } 

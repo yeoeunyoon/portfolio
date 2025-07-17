@@ -41,6 +41,7 @@ const FluidCursor = () => {
         height: '100vh',
         zIndex: 0,
         pointerEvents: 'none',
+        opacity: 0.43,
       }}
     />
   );

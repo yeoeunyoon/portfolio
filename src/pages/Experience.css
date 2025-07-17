@@ -3,17 +3,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
-  padding: 20px;
+  padding: 0px 8px 8px;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+  min-height: 773px;
   background-color: #ffffff;
 }
 
 .experience-container {
   width: 100%;
-  max-width: 1032px;
+  max-width: 1048px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px 8px 8px;
+  gap: 8px;
+  position: relative;
+  min-height: 773px;
 }
 
 .experience-title {
@@ -31,43 +38,44 @@
 .experience-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  align-items: center;
+  padding: 0px 8px 8px;
+  gap: 8px;
+  position: relative;
   width: 100%;
+  max-width: 1048px;
 }
 
 /* Notification - Collapsed */
-.notification-collapsed {
+.notification-1 {
   /* Auto layout */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 14px 12px;
   gap: 10px;
   isolation: isolate;
-
-  width: 1032px;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
   height: 100px;
-
   /* Inside auto layout */
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
-  position: relative;
 }
 
 /* Background */
-.notification-collapsed .background {
+.notification-1 .background {
   position: absolute;
-  width: 1032px;
+  width: 100%;
   right: 0px;
   top: 0px;
   bottom: 0px;
-
   backdrop-filter: blur(75px);
   /* Note: backdrop-filter has minimal browser support */
-
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -76,33 +84,28 @@
 }
 
 /* Notification */
-.notification-collapsed .notification {
+.notification-1 .notification {
   position: absolute;
   left: 0px;
   right: 0px;
   top: 0px;
   bottom: 0px;
-
-  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
   background-blend-mode: color-dodge, normal;
   border-radius: 24px;
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 14px 12px;
   gap: 10px;
 }
 
 /* image 5 */
-.notification-collapsed .image-container {
+.notification-1 .image-container {
   width: 50px;
   height: 50px;
-
-  background: url(image);
   border-radius: 10px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -111,7 +114,7 @@
 }
 
 /* Experience image */
-.notification-collapsed .experience-image {
+.notification-1 .experience-image {
   width: 50px;
   height: 50px;
   background-size: cover;
@@ -121,16 +124,14 @@
 }
 
 /* Title, Time and Description */
-.notification-collapsed .title-time-description {
+.notification-1 .title-time-description {
   /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
   width: 928px;
   height: 56px;
-
   /* Inside auto layout */
   flex: none;
   order: 2;
@@ -139,17 +140,15 @@
 }
 
 /* Title and Time */
-.notification-collapsed .title-and-time {
+.notification-1 .title-and-time {
   /* Auto layout */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px 8px 0px 0px;
   gap: 16px;
-
   width: 928px;
   height: 36px;
-
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -158,20 +157,18 @@
 }
 
 /* Title */
-.notification-collapsed .title {
+.notification-1 .title {
   width: 853px;
   height: 20px;
-
-  font-family: 'SF Pro';
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 590;
   font-size: 20px;
   line-height: 20px;
   /* identical to box height, or 100% */
   letter-spacing: -0.23px;
-
   color: #000000;
-
+  text-align: left;
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -179,10 +176,9 @@
 }
 
 /* Time */
-.notification-collapsed .time-container {
+.notification-1 .time-container {
   width: 51px;
   height: 36px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -191,37 +187,35 @@
 }
 
 /* Time */
-.notification-collapsed .time {
+.notification-1 .time {
   position: absolute;
   width: 155px;
   height: 20px;
-  left: -104px;
-  top: 0px;
-
-  font-family: 'SF Pro';
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   /* identical to box height, or 133% */
   text-align: right;
+  color: #999999;
 }
 
 /* Description */
-.notification-collapsed .description {
+.notification-1 .description {
   width: 347px;
   height: 20px;
-
-  font-family: 'SF Pro';
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 20px;
   /* identical to box height, or 118% */
   letter-spacing: -0.23px;
-
-  color: #000000;
-
+  color: #666666;
+  text-align: left;
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -233,33 +227,30 @@
   /* Auto layout */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 14px 12px;
   gap: 10px;
   isolation: isolate;
-
-  width: 1032px;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
   height: 100px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
   align-self: stretch;
   flex-grow: 0;
-  position: relative;
 }
 
 .notification-2 .background {
   position: absolute;
-  width: 1032px;
+  width: 100%;
   right: 0px;
   top: 0px;
   bottom: 0px;
-
   backdrop-filter: blur(75px);
   /* Note: backdrop-filter has minimal browser support */
-
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -273,14 +264,12 @@
   right: 0px;
   top: 0px;
   bottom: 0px;
-
-  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
   background-blend-mode: color-dodge, normal;
   border-radius: 24px;
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 14px 12px;
   gap: 10px;
@@ -289,15 +278,21 @@
 .notification-2 .image-container {
   width: 50px;
   height: 50px;
-
-  background: url(image.png);
   border-radius: 10px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
   z-index: 1;
+}
+
+.notification-2 .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 .notification-2 .title-time-description {
@@ -306,10 +301,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
   width: 928px;
   height: 70px;
-
   /* Inside auto layout */
   flex: none;
   order: 2;
@@ -324,10 +317,8 @@
   align-items: flex-start;
   padding: 0px 8px 0px 0px;
   gap: 16px;
-
   width: 928px;
   height: 30px;
-
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -338,17 +329,15 @@
 .notification-2 .title {
   width: 853px;
   height: 20px;
-
-  font-family: 'SF Pro';
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 590;
   font-size: 20px;
   line-height: 20px;
   /* identical to box height, or 100% */
   letter-spacing: -0.23px;
-
   color: #000000;
-
+  text-align: left;
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -358,7 +347,6 @@
 .notification-2 .time-container {
   width: 51px;
   height: 30px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -370,32 +358,31 @@
   position: absolute;
   width: 139px;
   height: 20px;
-  left: -88px;
-  top: 0px;
-
-  font-family: 'SF Pro';
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   /* identical to box height, or 133% */
   text-align: right;
+  color: #999999;
 }
 
 .notification-2 .description {
   width: 948px;
   height: 40px;
-
-  font-family: 'SF Pro';
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 20px;
   /* or 118% */
   letter-spacing: -0.23px;
-
-  color: #000000;
-
+  color: #666666;
+  text-align: left;
+  white-space: pre-line;
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -407,33 +394,30 @@
   /* Auto layout */
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 14px 12px;
   gap: 10px;
   isolation: isolate;
-
-  width: 1032px;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
   height: 100px;
-
   /* Inside auto layout */
   flex: none;
   order: 2;
   align-self: stretch;
   flex-grow: 0;
-  position: relative;
 }
 
 .notification-3 .background {
   position: absolute;
-  width: 1032px;
+  width: 100%;
   right: 0px;
   top: 0px;
   bottom: 0px;
-
   backdrop-filter: blur(75px);
   /* Note: backdrop-filter has minimal browser support */
-
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -447,14 +431,12 @@
   right: 0px;
   top: 0px;
   bottom: 0px;
-
-  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
   background-blend-mode: color-dodge, normal;
   border-radius: 24px;
-
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 14px 14px 12px;
   gap: 10px;
@@ -463,15 +445,21 @@
 .notification-3 .image-container {
   width: 50px;
   height: 50px;
-
-  background: url(image.png);
   border-radius: 10px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
   flex-grow: 0;
   z-index: 1;
+}
+
+.notification-3 .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 .notification-3 .title-time-description {
@@ -480,10 +468,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
   width: 928px;
   height: 70px;
-
   /* Inside auto layout */
   flex: none;
   order: 2;
@@ -498,10 +484,8 @@
   align-items: flex-start;
   padding: 0px 8px 0px 0px;
   gap: 16px;
-
   width: 928px;
   height: 30px;
-
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -512,17 +496,15 @@
 .notification-3 .title {
   width: 853px;
   height: 20px;
-
-  font-family: 'SF Pro';
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 590;
   font-size: 20px;
   line-height: 20px;
   /* identical to box height, or 100% */
   letter-spacing: -0.23px;
-
   color: #000000;
-
+  text-align: left;
   /* Inside auto layout */
   flex: none;
   order: 0;
@@ -532,7 +514,6 @@
 .notification-3 .time-container {
   width: 51px;
   height: 30px;
-
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -544,32 +525,702 @@
   position: absolute;
   width: 164px;
   height: 20px;
-  left: -113px;
-  top: 0px;
-
-  font-family: 'SF Pro';
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   /* identical to box height, or 133% */
   text-align: right;
+  color: #999999;
 }
 
 .notification-3 .description {
   width: 948px;
   height: 40px;
-
-  font-family: 'SF Pro';
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 20px;
   /* or 118% */
   letter-spacing: -0.23px;
+  color: #666666;
+  text-align: left;
+  white-space: pre-line;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
 
+/* Notification - Collapsed */
+.notification-4 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
+  height: 100px;
+  /* Inside auto layout */
+  flex: none;
+  order: 3;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-4 .background {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.notification-4 .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+.notification-4 .image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.notification-4 .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.notification-4 .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 928px;
+  height: 70px;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+.notification-4 .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+  width: 928px;
+  height: 30px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-4 .title {
+  width: 853px;
+  height: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
   color: #000000;
+  text-align: left;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
 
+.notification-4 .time-container {
+  width: 51px;
+  height: 30px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-4 .time {
+  position: absolute;
+  width: 145px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+  color: #999999;
+}
+
+.notification-4 .description {
+  width: 948px;
+  height: 40px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* or 118% */
+  letter-spacing: -0.23px;
+  color: #666666;
+  text-align: left;
+  white-space: pre-line;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Notification - Collapsed */
+.notification-5 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
+  height: 100px;
+  /* Inside auto layout */
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-5 .background {
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.notification-5 .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+.notification-5 .image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.notification-5 .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.notification-5 .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 928px;
+  height: 70px;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+.notification-5 .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+  width: 928px;
+  height: 30px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-5 .title {
+  width: 853px;
+  height: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
+  color: #000000;
+  text-align: left;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.notification-5 .time-container {
+  width: 51px;
+  height: 30px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-5 .time {
+  position: absolute;
+  width: 146px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+  color: #999999;
+}
+
+.notification-5 .description {
+  width: 948px;
+  height: 40px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* or 118% */
+  letter-spacing: -0.23px;
+  color: #666666;
+  text-align: left;
+  white-space: pre-line;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Notification - Collapsed */
+.notification-6 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25px 14px;
+  gap: 10px;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  /* Inside auto layout */
+  flex: none;
+  order: 5;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-6 .background {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.notification-6 .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+.notification-6 .image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.notification-6 .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.notification-6 .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 928px;
+  height: 56px;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+.notification-6 .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+  width: 928px;
+  height: 36px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.notification-6 .title {
+  width: 853px;
+  height: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
+  color: #000000;
+  text-align: left;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.notification-6 .time-container {
+  width: 51px;
+  height: 36px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-6 .time {
+  position: absolute;
+  width: 148px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+  color: #999999;
+}
+
+.notification-6 .description {
+  width: 928px;
+  height: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* identical to box height, or 118% */
+  letter-spacing: -0.23px;
+  color: #666666;
+  text-align: left;
+  white-space: pre-line;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Notification - Collapsed */
+.notification-7 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 28px;
+  gap: 10px;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  max-width: 1032px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  /* Inside auto layout */
+  flex: none;
+  order: 6;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-7 .background {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.notification-7 .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+.notification-7 .image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.notification-7 .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.notification-7 .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 928px;
+  height: 56px;
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+.notification-7 .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+  width: 928px;
+  height: 36px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-7 .title {
+  width: 853px;
+  height: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
+  color: #000000;
+  text-align: left;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.notification-7 .time-container {
+  width: 51px;
+  height: 36px;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-7 .time {
+  position: absolute;
+  width: 74px;
+  height: 20px;
+  right: 20px;
+  top: 20px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+  color: #999999;
+}
+
+.notification-7 .description {
+  width: 885px;
+  height: 40px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* identical to box height, or 118% */
+  letter-spacing: -0.23px;
+  color: #666666;
+  text-align: left;
+  white-space: pre-line;
   /* Inside auto layout */
   flex: none;
   order: 1;
@@ -582,24 +1233,54 @@
     max-width: 90vw;
   }
   
-  .notification-collapsed {
+  .notification-1,
+  .notification-2,
+  .notification-3,
+  .notification-4,
+  .notification-5,
+  .notification-6,
+  .notification-7 {
     width: 100%;
     max-width: 1032px;
   }
   
-  .notification-collapsed .background {
+  .notification-1 .background,
+  .notification-2 .background,
+  .notification-3 .background,
+  .notification-4 .background,
+  .notification-5 .background,
+  .notification-6 .background,
+  .notification-7 .background {
     width: 100%;
   }
   
-  .notification-collapsed .title-time-description {
+  .notification-1 .title-time-description,
+  .notification-2 .title-time-description,
+  .notification-3 .title-time-description,
+  .notification-4 .title-time-description,
+  .notification-5 .title-time-description,
+  .notification-6 .title-time-description,
+  .notification-7 .title-time-description {
     width: calc(100% - 70px);
   }
   
-  .notification-collapsed .title-and-time {
+  .notification-1 .title-and-time,
+  .notification-2 .title-and-time,
+  .notification-3 .title-and-time,
+  .notification-4 .title-and-time,
+  .notification-5 .title-and-time,
+  .notification-6 .title-and-time,
+  .notification-7 .title-and-time {
     width: 100%;
   }
   
-  .notification-collapsed .title {
+  .notification-1 .title,
+  .notification-2 .title,
+  .notification-3 .title,
+  .notification-4 .title,
+  .notification-5 .title,
+  .notification-6 .title,
+  .notification-7 .title {
     width: calc(100% - 171px);
   }
 } 
