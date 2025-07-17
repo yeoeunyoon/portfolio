@@ -1,0 +1,605 @@
+.experience-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.experience-container {
+  width: 100%;
+  max-width: 1032px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-title {
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 590;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: -0.23px;
+  color: #000000;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+/* Notification - Collapsed */
+.notification-collapsed {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+  isolation: isolate;
+
+  width: 1032px;
+  height: 100px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  position: relative;
+}
+
+/* Background */
+.notification-collapsed .background {
+  position: absolute;
+  width: 1032px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+/* Notification */
+.notification-collapsed .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+/* image 5 */
+.notification-collapsed .image-container {
+  width: 50px;
+  height: 50px;
+
+  background: url(image);
+  border-radius: 10px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+/* Experience image */
+.notification-collapsed .experience-image {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+/* Title, Time and Description */
+.notification-collapsed .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 928px;
+  height: 56px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+/* Title and Time */
+.notification-collapsed .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+
+  width: 928px;
+  height: 36px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Title */
+.notification-collapsed .title {
+  width: 853px;
+  height: 20px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+/* Time */
+.notification-collapsed .time-container {
+  width: 51px;
+  height: 36px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Time */
+.notification-collapsed .time {
+  position: absolute;
+  width: 155px;
+  height: 20px;
+  left: -104px;
+  top: 0px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+}
+
+/* Description */
+.notification-collapsed .description {
+  width: 347px;
+  height: 20px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* identical to box height, or 118% */
+  letter-spacing: -0.23px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Notification - Collapsed */
+.notification-2 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+  isolation: isolate;
+
+  width: 1032px;
+  height: 100px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  position: relative;
+}
+
+.notification-2 .background {
+  position: absolute;
+  width: 1032px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.notification-2 .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+.notification-2 .image-container {
+  width: 50px;
+  height: 50px;
+
+  background: url(image.png);
+  border-radius: 10px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.notification-2 .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 928px;
+  height: 70px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+.notification-2 .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+
+  width: 928px;
+  height: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-2 .title {
+  width: 853px;
+  height: 20px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.notification-2 .time-container {
+  width: 51px;
+  height: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-2 .time {
+  position: absolute;
+  width: 139px;
+  height: 20px;
+  left: -88px;
+  top: 0px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+}
+
+.notification-2 .description {
+  width: 948px;
+  height: 40px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* or 118% */
+  letter-spacing: -0.23px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Notification - Collapsed */
+.notification-3 {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+  isolation: isolate;
+
+  width: 1032px;
+  height: 100px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  position: relative;
+}
+
+.notification-3 .background {
+  position: absolute;
+  width: 1032px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  backdrop-filter: blur(75px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.notification-3 .notification {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  background: linear-gradient(0deg, #333333, #333333), rgba(166, 166, 166, 0.7);
+  background-blend-mode: color-dodge, normal;
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px 12px;
+  gap: 10px;
+}
+
+.notification-3 .image-container {
+  width: 50px;
+  height: 50px;
+
+  background: url(image.png);
+  border-radius: 10px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.notification-3 .title-time-description {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 928px;
+  height: 70px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  z-index: 2;
+}
+
+.notification-3 .title-and-time {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 8px 0px 0px;
+  gap: 16px;
+
+  width: 928px;
+  height: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-3 .title {
+  width: 853px;
+  height: 20px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 20px;
+  /* identical to box height, or 100% */
+  letter-spacing: -0.23px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.notification-3 .time-container {
+  width: 51px;
+  height: 30px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.notification-3 .time {
+  position: absolute;
+  width: 164px;
+  height: 20px;
+  left: -113px;
+  top: 0px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height, or 133% */
+  text-align: right;
+}
+
+.notification-3 .description {
+  width: 948px;
+  height: 40px;
+
+  font-family: 'SF Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  /* or 118% */
+  letter-spacing: -0.23px;
+
+  color: #000000;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1100px) {
+  .experience-container {
+    max-width: 90vw;
+  }
+  
+  .notification-collapsed {
+    width: 100%;
+    max-width: 1032px;
+  }
+  
+  .notification-collapsed .background {
+    width: 100%;
+  }
+  
+  .notification-collapsed .title-time-description {
+    width: calc(100% - 70px);
+  }
+  
+  .notification-collapsed .title-and-time {
+    width: 100%;
+  }
+  
+  .notification-collapsed .title {
+    width: calc(100% - 171px);
+  }
+} 
