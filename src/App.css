@@ -26,6 +26,16 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+
+/* TabBar positioning */
+.tab-bar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 /* Main Layout */
@@ -44,17 +54,7 @@ body {
   padding-bottom: 120px;
 }
 
-/* Nav Bar - iPad */
-.navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
+
 
 .navbar-container {
   /* Auto layout */
@@ -415,4 +415,42 @@ body {
   .instruction-text {
     margin-top: 0.5rem;
   }
+}
+
+/* Page components */
+.me-page,
+.experience-page,
+.project-page,
+.skills-page,
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.me-page h1,
+.experience-page h1,
+.project-page h1,
+.skills-page h1,
+.contact-page h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.me-page p,
+.experience-page p,
+.project-page p,
+.skills-page p,
+.contact-page p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: #666666;
+  max-width: 600px;
 }

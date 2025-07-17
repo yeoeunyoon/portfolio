@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       
       {/* Click under the bar or tap right */}
       <div className="instruction-text">
-        Click under the bar or tap right
+        Click the top bar or tap right
       </div>
     </div>
   );

@@ -1,0 +1,308 @@
+/* Tab Bar - iPad */
+
+.tab-bar {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px;
+  isolation: isolate;
+  position: relative;
+
+  width: 672px;
+  height: 58px;
+}
+
+/* Platter */
+.platter {
+  position: absolute;
+  height: 41px;
+  left: -1px;
+  right: 1px;
+  top: calc(50% - 41px/2 - 8.5px);
+
+  background: #FFFFFF;
+  border-radius: 100px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+
+
+/* Thin */
+.thin {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: linear-gradient(0deg, #BEBEBE, #BEBEBE), rgba(166, 166, 166, 0.7);
+  background-blend-mode: color-dodge, normal;
+  /* Material Blur */
+  backdrop-filter: blur(25px);
+  border-radius: 100px;
+}
+
+/* Sidebar button */
+.sidebar-button,
+.search-button {
+  width: 56px;
+  height: 32.5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+  z-index: 10;
+}
+
+.sidebar-button {
+  order: 1;
+}
+
+/* Sidebar image */
+.sidebar-image,
+.search-image {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Stretch */
+.stretch {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  min-width: 0;
+
+
+  width: 502px;
+  height: 33px;
+
+  /* Inside auto layout */
+  flex: 1;
+  order: 2;
+  flex-grow: 1;
+  z-index: 2;
+}
+
+/* Tab base styles */
+.tab {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-text {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.23px;
+  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 15px;
+  line-height: 20px;
+  color: #090909;
+}
+
+/* Tab 1 - Home */
+.tab-1 {
+  width: 80px;
+  height: 33px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.tab-1 .tab-text {
+  left: 18%;
+  right: 18%;
+}
+
+.tab-1.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+}
+
+.tab-1.active .tab-text {
+  font-weight: 700;
+  font-size: 16px;
+  color: #007AFF;
+}
+
+/* Tab 2 - Me */
+.tab-2 {
+  width: 66px;
+  height: 33px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.tab-2 .tab-text {
+  left: 18%;
+  right: 18%;
+}
+
+.tab-2.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+}
+
+.tab-2.active .tab-text {
+  color: #007AFF;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Tab 3 - Experience */
+.tab-3 {
+  width: 115px;
+  height: 33px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.tab-3 .tab-text {
+  left: 18%;
+  right: 18%;
+}
+
+.tab-3.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+}
+
+.tab-3.active .tab-text {
+  color: #007AFF;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Tab 4 - Project */
+.tab-4 {
+  width: 87px;
+  height: 33px;
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+
+.tab-4 .tab-text {
+  left: 18%;
+  right: 18%;
+}
+
+.tab-4.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+}
+
+.tab-4.active .tab-text {
+  color: #007AFF;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Tab 5 - Skills */
+.tab-5 {
+  width: 82px;
+  height: 33px;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+
+.tab-5 .tab-text {
+  left: 18%;
+  right: 18%;
+}
+
+.tab-5.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+}
+
+.tab-5.active .tab-text {
+  color: #007AFF;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Tab 6 - Contact */
+.tab-6 {
+  width: 100px;
+  height: 33px;
+  flex: none;
+  order: 5;
+  flex-grow: 0;
+
+}
+
+.tab-6 .tab-text {
+  left: 18%;
+  right: 18%;
+}
+
+.tab-6.active {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+}
+
+.tab-6.active .tab-text {
+  color: #007AFF;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Search button */
+.search-button {
+  width: 56px;
+  height: 41px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+  z-index: 10;
+}
+
+/* Search image */
+.search-image {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
