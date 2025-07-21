@@ -17,7 +17,7 @@ const Me = () => {
     <div className="me-root" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
       <div className="experience-background" style = {{backgroundImage: `url(${wallPaper})`}}/>
       {/* Profile Section */}
-      <div className="profile-section">
+      <div className="profile-section frost-glass">
         <div className="profile-header-row">
           <img src={personIcon} alt="profile" className="profile-header-icon" />
           <span className="profile-header-text">Profile</span>
@@ -52,7 +52,7 @@ const Me = () => {
       </div>
       {/* Main Content */}
       <div className="me-main">
-        <div className="about-section">
+        <div className="about-section frost-glass">
           <div className="about-title-row">
             <img src={starIcon} alt="star" className="about-title-icon" />
             <span className="about-title-text">About Me</span>
@@ -70,7 +70,7 @@ const Me = () => {
           </div>
         </div>
         <div className="me-bottom-row">
-          <div className="funfacts-section">
+          <div className="funfacts-section frost-glass">
             <div className="funfacts-title-row">
               <img src={noteIcon} alt="note" className="funfacts-title-icon" />
               <span className="funfacts-title-text">Fun Facts</span>
@@ -81,7 +81,7 @@ const Me = () => {
               <li> I love to sing! 🎤</li>
             </ul>
           </div>
-          <div className="photogallery-section">
+          <div className="photogallery-section frost-glass">
             <div className="photogallery-title-row">
               <img src={cameraIcon} alt="camera" className="photogallery-title-icon" />
               <span className="photogallery-title-text">Photo Gallery</span>
