@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Experience.css';
-import lsImage from '../images/ls-securities.png';
-import worldquantImage from '../images/worldquant.png';
-import biitechImage from '../images/biitech.png';
-import jhuImage from '../images/hopkins.png';
-import docdocImage from '../images/docdoc.png';
-import bloombergImage from '../images/bloomberg.png';
-import imcImage from '../images/imc.png';
+import lsImage from '../images/company-image/ls-securities.png';
+import worldquantImage from '../images/company-image/worldquant.png';
+import biitechImage from '../images/company-image/biitech.png';
+import jhuImage from '../images/company-image/hopkins.png';
+import docdocImage from '../images/company-image/docdoc.png';
+import bloombergImage from '../images/company-image/bloomberg.png';
+import imcImage from '../images/company-image/imc.png';
+import wallPaper from '../images/wallpaper.png';
 
 const experiences = [
   {
@@ -73,34 +74,39 @@ const Experience = () => {
   }, []);
 
   return (
-    <div className="notification-list">
-      {experiences.map((exp, idx) => (
-        <div
-          className={
-            "notification-base" +
-            (visibleIndexes.includes(idx) ? " visible" : "")
-          }
-          key={exp.id}
-        >
-          <div className="notification-image" style={{backgroundImage: `url(${exp.image})`}} />
-          <div className="notification-content">
-            <div className="notification-title-time">
-              <div className="notification-title">{exp.title}</div>
-              <div className="notification-time-container">
-                <div className="notification-time">{exp.time}</div>
+    <div style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh'}}>
+      {/* Wallpaper background */}
+      <div className="background-wallpaper" style={{backgroundImage: `url(${wallPaper})`}}/>
+      {/* Main content */}
+      <div className="notification-list" style={{ position: 'relative', zIndex: 1 }}>
+        {experiences.map((exp, idx) => (
+          <div
+            className={
+              "notification-base" +
+              (visibleIndexes.includes(idx) ? " visible" : "")
+            }
+            key={exp.id}
+          >
+            <div className="notification-image" style={{backgroundImage: `url(${exp.image})`}} />
+            <div className="notification-content">
+              <div className="notification-title-time">
+                <div className="notification-title">{exp.title}</div>
+                <div className="notification-time-container">
+                  <div className="notification-time">{exp.time}</div>
+                </div>
+              </div>
+              <div className="notification-description">
+                {exp.description.split('\n').map((line, idx) => (
+                  <React.Fragment key={idx}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
               </div>
             </div>
-            <div className="notification-description">
-              {exp.description.split('\n').map((line, idx) => (
-                <React.Fragment key={idx}>
-                  {line}
-                  <br />
-                </React.Fragment>
-              ))}
-            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

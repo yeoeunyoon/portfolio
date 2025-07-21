@@ -10,10 +10,12 @@ import noteIcon from '../images/note-icon.png';
 import mailIcon from '../images/mail-icon.png';
 import locationIcon from '../images/location-icon.png';
 import bookIcon from '../images/book-icon.png';
+import wallPaper from '../images/wallpaper.png';
 
 const Me = () => {
   return (
-    <div className="me-root">
+    <div className="me-root" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
+      <div className="experience-background" style = {{backgroundImage: `url(${wallPaper})`}}/>
       {/* Profile Section */}
       <div className="profile-section">
         <div className="profile-header-row">
@@ -40,8 +42,12 @@ const Me = () => {
           </div>
         </div>
         <div className="profile-links">
-          <img src={githubImg} alt="github" className="profile-link-img" />
-          <img src={linkedinImg} alt="linkedin" className="profile-link-img" />
+          <a href="https://github.com/yeoeunyoon" target="_blank" rel="noopener noreferrer">
+            <img src={githubImg} alt="github" className="profile-link-img" />
+          </a>
+          <a href="https://www.linkedin.com/in/jasmineyoon04/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedinImg} alt="linkedin" className="profile-link-img" />
+          </a>
         </div>
       </div>
       {/* Main Content */}
@@ -53,7 +59,7 @@ const Me = () => {
           </div>
           <div className="about-head">Hi, I’m Jasmine! <span role="img" aria-label="wave">👋</span></div>
           <div className="about-desc">
-            I love building web apps, exploring finance, and learning new things. I’m passionate about tech for impact and always looking for new challenges.
+            I enjoy building full-stack applications, exploring quantitative finance, and uncovering insights through data analysis. Passionate about bridging tech and impact, I’ve interned across healthtech and fintech, and I’m always looking to learn something new—whether it’s coding a tool, designing a dashboard, or solving a tough algorithmic challenge.
           </div>
           <div className="about-tags">
             <span className="about-tag"># Development</span>
@@ -70,9 +76,9 @@ const Me = () => {
               <span className="funfacts-title-text">Fun Facts</span>
             </div>
             <ul className="funfacts-list">
-              <li>I’ve lived in Korea 🇰🇷, Singapore 🇸🇬, and now studying in the U.S 🇺🇸!</li>
-              <li>I don’t eat cheeze... 🧀 (if this is a surprize!)</li>
-              <li>I love to sing! 🎤</li>
+              <li> I’ve lived in Korea 🇰🇷, Singapore 🇸🇬, and now studying in the U.S 🇺🇸!</li>
+              <li> I don’t eat cheeze... 🧀 (if this is a surprize!)</li>
+              <li> I love to sing! 🎤</li>
             </ul>
           </div>
           <div className="photogallery-section">

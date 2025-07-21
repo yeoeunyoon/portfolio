@@ -8,7 +8,6 @@ import Contact from './pages/Contact';
 import TabBar from './components/TabBar';
 import NavigationArrow from './components/NavigationArrow';
 import PageControl from './components/PageControl';
-import FluidCursor from './components/FluidCursor';
 import './App.css';
 
 function App() {
