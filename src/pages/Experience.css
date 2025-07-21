@@ -1,1286 +1,286 @@
-.experience-page {
+.experience-list{
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    isolation: isolate;
+
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    border-radius: 5px;
+}
+
+.experience-shadow{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1214px;
+    height: 763px;
+
+    background: rgba(0, 0, 0, 0.2);
+    background-blend-mode: plus-darker;
+    filter: blur(50px);
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+}
+
+.notification-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0px 8px 8px;
-  gap: 8px;
+  justify-content: center;
+  min-height: 100vh;
+  width: 1214px;
+  margin: 0 auto;
   position: relative;
-  width: 100%;
-  min-height: 773px;
-  background-color: #ffffff;
+  gap: 10px;
 }
 
-.experience-container {
-  width: 100%;
-  max-width: 1048px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 8px 8px;
-  gap: 8px;
+.notification-base {
   position: relative;
-  min-height: 773px;
-}
-
-.experience-title {
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 24px;
-  line-height: 24px;
-  letter-spacing: -0.23px;
-  color: #000000;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 8px 8px;
-  gap: 8px;
-  position: relative;
-  width: 100%;
-  max-width: 1048px;
-}
-
-/* Notification - Collapsed */
-.notification-1 {
-  /* Auto layout */
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
+  padding: 18px 28px;
+  gap: 18px;
+  width: 1174px;
   height: 100px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-/* Background */
-.notification-1 .background {
-  position: absolute;
-  width: 100%;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-}
-
-/* Notification */
-.notification-1 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
   border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow: hidden;
+  background: rgba(230,230,230,0.65);
+  box-shadow: 0 16px 80px 0 rgba(60,60,60,0.5), 0 0 64px 16px rgba(255,255,255,0.33);
+  backdrop-filter: blur(32px);
+  margin-bottom: 0px;
+  border: 2px solid rgba(255,255,255,0.7);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s cubic-bezier(.4,2,.6,1), transform 0.5s cubic-bezier(.4,2,.6,1);
 }
 
-/* image 5 */
-.notification-1 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+.notification-base.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification-base::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  left: 0; top: 0; right: 0; bottom: 0;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255,255,255,0.38) 0px, rgba(255,255,255,0.18) 32px, transparent 64px),
+    radial-gradient(circle at 90% 8%, rgba(255,255,255,0.32) 0px, rgba(255,255,255,0.13) 28px, transparent 60px),
+    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.25) 0px, rgba(255,255,255,0.10) 30px, transparent 60px),
+    radial-gradient(circle at 20% 85%, rgba(255,255,255,0.18) 0px, rgba(255,255,255,0.08) 24px, transparent 48px);
+}
+
+/* 카드 본문이 항상 위에 오도록 */
+.notification-base > * {
+  position: relative;
   z-index: 1;
 }
 
-/* Experience image */
-.notification-1 .experience-image {
+.notification-bg { display: none; }
+
+.notification-image {
   width: 50px;
   height: 50px;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   border-radius: 10px;
-}
-
-/* Title, Time and Description */
-.notification-1 .title-time-description {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 56px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
-}
-
-/* Title and Time */
-.notification-1 .title-and-time {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 36px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-/* Title */
-.notification-1 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-}
-
-/* Time */
-.notification-1 .time-container {
-  width: 51px;
-  height: 36px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-/* Time */
-.notification-1 .time {
-  position: absolute;
-  width: 155px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
-  text-align: right;
-  color: #999999;
-}
-
-/* Description */
-.notification-1 .description {
-  width: 347px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* identical to box height, or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-/* Notification - Collapsed */
-.notification-2 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
-  height: 100px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-2 .background {
-  position: absolute;
-  width: 100%;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-}
-
-.notification-2 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-}
-
-.notification-2 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
   z-index: 1;
+  flex: none;
 }
 
-.notification-2 .experience-image {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-}
-
-.notification-2 .title-time-description {
-  /* Auto layout */
+.notification-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 70px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
-.notification-2 .title-and-time {
-  /* Auto layout */
+.notification-title-time {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.notification-2 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
+.notification-title {
+  font-family: 'SF Pro', sans-serif;
   font-weight: 590;
   font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+  color: #404040;
+  line-height: 1.1;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.notification-2 .time-container {
-  width: 51px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-2 .time {
-  position: absolute;
-  width: 139px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
-  text-align: right;
-  color: #999999;
-}
-
-.notification-2 .description {
-  width: 948px;
-  height: 40px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  white-space: pre-line;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-/* Notification - Collapsed */
-.notification-3 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
-  height: 100px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-3 .background {
-  position: absolute;
-  width: 100%;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-}
-
-.notification-3 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-}
-
-.notification-3 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  z-index: 1;
-}
-
-.notification-3 .experience-image {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-}
-
-.notification-3 .title-time-description {
-  /* Auto layout */
+.notification-time-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 70px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 80px;
 }
 
-.notification-3 .title-and-time {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-3 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-}
-
-.notification-3 .time-container {
-  width: 51px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-3 .time {
-  position: absolute;
-  width: 164px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
+.notification-time {
+  font-family: 'SF Pro', sans-serif;
   font-weight: 400;
   font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
+  color: #505050;
+  text-shadow: 0px 4px 4px rgba(0,0,0,0.15);
   text-align: right;
-  color: #999999;
 }
 
-.notification-3 .description {
-  width: 948px;
-  height: 40px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  white-space: pre-line;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-/* Notification - Collapsed */
-.notification-4 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
-  height: 100px;
-  /* Inside auto layout */
-  flex: none;
-  order: 3;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-4 .background {
-  position: absolute;
-  width: 100%;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-}
-
-.notification-4 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-}
-
-.notification-4 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  z-index: 1;
-}
-
-.notification-4 .experience-image {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-}
-
-.notification-4 .title-time-description {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 70px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
-}
-
-.notification-4 .title-and-time {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-4 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-}
-
-.notification-4 .time-container {
-  width: 51px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-4 .time {
-  position: absolute;
-  width: 145px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+.notification-subtitle {
+  font-family: 'SF Pro', sans-serif;
   font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
-  text-align: right;
-  color: #999999;
+  color: #888;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
-.notification-4 .description {
-  width: 948px;
-  height: 40px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  white-space: pre-line;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+.notification-description {
+  font-family: 'SF Pro', sans-serif;
+  font-size: 16px;
+  color: #6D6D6D;
+  margin-top: 4px;
+  line-height: 1.3;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Notification - Collapsed */
-.notification-5 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
-  height: 100px;
-  /* Inside auto layout */
-  flex: none;
-  order: 4;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-5 .background {
-  position: absolute;
-  width: 100%;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-}
-
-.notification-5 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-}
-
-.notification-5 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  z-index: 1;
-}
-
-.notification-5 .experience-image {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-}
-
-.notification-5 .title-time-description {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 70px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
-}
-
-.notification-5 .title-and-time {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-5 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-}
-
-.notification-5 .time-container {
-  width: 51px;
-  height: 30px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-5 .time {
-  position: absolute;
-  width: 146px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
-  text-align: right;
-  color: #999999;
-}
-
-.notification-5 .description {
-  width: 948px;
-  height: 40px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  white-space: pre-line;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-/* Notification - Collapsed */
-.notification-6 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 25px 14px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  /* Inside auto layout */
-  flex: none;
-  order: 5;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-6 .background {
-  position: absolute;
-  width: 100%;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
-}
-
-.notification-6 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-}
-
-.notification-6 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  z-index: 1;
-}
-
-.notification-6 .experience-image {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-}
-
-.notification-6 .title-time-description {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 56px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
-}
-
-.notification-6 .title-and-time {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 36px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.notification-6 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-}
-
-.notification-6 .time-container {
-  width: 51px;
-  height: 36px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-6 .time {
-  position: absolute;
-  width: 148px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
-  text-align: right;
-  color: #999999;
-}
-
-.notification-6 .description {
-  width: 928px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* identical to box height, or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  white-space: pre-line;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-/* Notification - Collapsed */
+.notification-1,
+.notification-2,
+.notification-3,
+.notification-4,
+.notification-5,
+.notification-6,
 .notification-7 {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 28px;
-  gap: 10px;
-  isolation: isolate;
-  position: relative;
-  width: 100%;
-  max-width: 1032px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  /* Inside auto layout */
-  flex: none;
-  order: 6;
-  align-self: stretch;
-  flex-grow: 0;
+    /* 중앙정렬 방해 속성 제거, order와 z-index만 유지 */
+    order: 1;
+    z-index: 1;
 }
 
-.notification-7 .background {
-  position: absolute;
-  width: 100%;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  backdrop-filter: blur(75px);
-  /* Note: backdrop-filter has minimal browser support */
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 0;
+.notification-6 .banner1,
+.notification-7 .banner1{
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 20px;
+    gap: 10px;
+
+    position: absolute;
+    height: 8px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    opacity: 0.8;
+    border-radius: 24px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    z-index: 0;
+
 }
 
-.notification-7 .notification {
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  background: linear-gradient(0deg, #333333, #333333), #BFBFBF;
-  background-blend-mode: color-dodge, normal;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 14px 14px 12px;
-  gap: 10px;
-}
+.notification-7 .banner2{
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 20px;
+    gap: 10px;
 
-.notification-7 .image-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 10px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  z-index: 1;
-}
+    position: absolute;
+    height: 8px;
+    left: 0px;
+    right: 0px;
+    bottom: 8px;
 
-.notification-7 .experience-image {
-  width: 50px;
-  height: 50px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 10px;
-}
+    opacity: 0.8;
+    border-radius: 24px;
 
-.notification-7 .title-time-description {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  width: 928px;
-  height: 56px;
-  /* Inside auto layout */
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-  z-index: 2;
-}
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    z-index: 1;
 
-.notification-7 .title-and-time {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 8px 0px 0px;
-  gap: 16px;
-  width: 928px;
-  height: 36px;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-7 .title {
-  width: 853px;
-  height: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 590;
-  font-size: 20px;
-  line-height: 20px;
-  /* identical to box height, or 100% */
-  letter-spacing: -0.23px;
-  color: #000000;
-  text-align: left;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-}
-
-.notification-7 .time-container {
-  width: 51px;
-  height: 36px;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.notification-7 .time {
-  position: absolute;
-  width: 74px;
-  height: 20px;
-  right: 20px;
-  top: 20px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  /* identical to box height, or 133% */
-  text-align: right;
-  color: #999999;
-}
-
-.notification-7 .description {
-  width: 885px;
-  height: 40px;
-  font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-  /* identical to box height, or 118% */
-  letter-spacing: -0.23px;
-  color: #666666;
-  text-align: left;
-  white-space: pre-line;
-  /* Inside auto layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
 /* Responsive design */
 @media (max-width: 1100px) {
-  .experience-container {
-    max-width: 90vw;
-  }
-  
-  .notification-1,
-  .notification-2,
-  .notification-3,
-  .notification-4,
-  .notification-5,
-  .notification-6,
-  .notification-7 {
-    width: 100%;
-    max-width: 1032px;
-  }
-  
-  .notification-1 .background,
-  .notification-2 .background,
-  .notification-3 .background,
-  .notification-4 .background,
-  .notification-5 .background,
-  .notification-6 .background,
-  .notification-7 .background {
-    width: 100%;
-  }
-  
-  .notification-1 .title-time-description,
-  .notification-2 .title-time-description,
-  .notification-3 .title-time-description,
-  .notification-4 .title-time-description,
-  .notification-5 .title-time-description,
-  .notification-6 .title-time-description,
-  .notification-7 .title-time-description {
-    width: calc(100% - 70px);
-  }
-  
-  .notification-1 .title-and-time,
-  .notification-2 .title-and-time,
-  .notification-3 .title-and-time,
-  .notification-4 .title-and-time,
-  .notification-5 .title-and-time,
-  .notification-6 .title-and-time,
-  .notification-7 .title-and-time {
-    width: 100%;
-  }
-  
-  .notification-1 .title,
-  .notification-2 .title,
-  .notification-3 .title,
-  .notification-4 .title,
-  .notification-5 .title,
-  .notification-6 .title,
-  .notification-7 .title {
-    width: calc(100% - 171px);
-  }
-} 
+    .experience-shadow {
+      width: 90vw;
+      height: 60vh;
+    }
+    
+    .notification-base {
+      width: 90vw;
+      max-width: 90vw;
+    }
+    
+    .notification-base .title-time-description {
+      width: calc(100% - 70px);
+      max-width: calc(100% - 70px);
+    }
+    
+    .notification-base .title-time-description .title-time .title {
+      width: calc(100% - 74px);
+      max-width: calc(100% - 74px);
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-shadow {
+      width: 95vw;
+      height: 50vh;
+    }
+    
+    .notification-base {
+      width: 95vw;
+      max-width: 95vw;
+      padding: 10px 15px 10px 12px;
+    }
+    
+    .notification-base .image-container {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .notification-base .title-time-description .title-time .title {
+      font-size: 16px;
+    }
+    
+    .notification-base .title-time-description .description {
+      font-size: 14px;
+    }
+}
