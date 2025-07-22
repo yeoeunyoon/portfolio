@@ -10,10 +10,10 @@
 }
 
 .frost-glass {
-  background: rgba(230,230,230,0.65);
-  box-shadow: 0 16px 80px 0 rgba(60,60,60,0.5), 0 0 64px 16px rgba(255,255,255,0.33);
+  background: rgba(230,230,230,0.4);
+  box-shadow: 0 16px 80px 0 rgba(60,60,60,0.3), 0 0 64px 16px rgba(255,255,255,0.2);
   backdrop-filter: blur(32px);
-  border: 2px solid rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.5);
 }
 
 .profile-section {
@@ -115,14 +115,14 @@
   font-weight: 700;
   font-size: 30px;
   color: #007AFF;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .about-head {
   font-family: 'SF Pro', sans-serif;
   font-weight: 590;
   font-size: 40px;
   color: #000;
-  margin-bottom: 16px;
+  margin-bottom: 13px;
 }
 .about-desc {
   font-family: 'SF Pro', sans-serif;
@@ -225,7 +225,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .about-title-icon, .funfacts-title-icon, .photogallery-title-icon {
   width: 24px;

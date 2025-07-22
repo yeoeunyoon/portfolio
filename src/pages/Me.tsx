@@ -11,6 +11,9 @@ import mailIcon from '../images/mail-icon.png';
 import locationIcon from '../images/location-icon.png';
 import bookIcon from '../images/book-icon.png';
 import wallPaper from '../images/wallpaper.png';
+import koreaFlag from '../images/country/korea.png';
+import singaporeFlag from '../images/country/singapore.png';
+import usFlag from '../images/country/us.png';
 
 const Me = () => {
   return (
@@ -76,7 +79,9 @@ const Me = () => {
               <span className="funfacts-title-text">Fun Facts</span>
             </div>
             <ul className="funfacts-list">
-              <li> I’ve lived in Korea 🇰🇷, Singapore 🇸🇬, and now studying in the U.S 🇺🇸!</li>
+              <li> I’ve lived in Korea <img src={koreaFlag} alt="Korea" style={{width:'26px',verticalAlign:'middle',margin:'0 2px'}}/>,
+                Singapore <img src={singaporeFlag} alt="Singapore" style={{width:'22px',verticalAlign:'middle',margin:'0 2px'}}/>,
+                and now studying in the U.S <img src={usFlag} alt="US" style={{width:'22px',verticalAlign:'middle',margin:'0 2px'}}/>!</li>
               <li> I don’t eat cheeze... 🧀 (if this is a surprize!)</li>
               <li> I love to sing! 🎤</li>
             </ul>
