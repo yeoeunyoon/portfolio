@@ -10,11 +10,29 @@ import mailIcon from '../images/mail-icon.png';
 import locationIcon from '../images/location-icon.png';
 import bookIcon from '../images/book-icon.png';
 import wallPaper from '../images/wallpaper.png';
-import koreaFlag from '../images/country/korea.png';
-import singaporeFlag from '../images/country/singapore.png';
-import usFlag from '../images/country/us.png';
+import me1Img from '../images/my-image/me1.jpeg';
+import me2Img from '../images/my-image/me2.jpeg';
+import me3Img from '../images/my-image/me3.jpeg';
+import me4Img from '../images/my-image/me4.jpeg';
+import me5Img from '../images/my-image/me5.jpeg';
+import me6Img from '../images/my-image/me6.jpeg';
+import { useState, useEffect } from 'react';
 
 const Me = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = [me1Img, me2Img, me3Img, me4Img, me5Img, me6Img];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="me-root" style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
       <div className="experience-background" style = {{backgroundImage: `url(${wallPaper})`}}/>
@@ -59,9 +77,9 @@ const Me = () => {
             <img src={starIcon} alt="star" className="about-title-icon" />
             <span className="about-title-text">About Me</span>
           </div>
-          <div className="about-head">Hi, I’m Jasmine! <span role="img" aria-label="wave">👋</span></div>
+          <div className="about-head">Hi, I'm Jasmine! <span role="img" aria-label="wave">👋</span></div>
           <div className="about-desc">
-            I enjoy building full-stack applications, exploring quantitative finance, and uncovering insights through data analysis. Passionate about bridging tech and impact, I’ve interned across healthtech and fintech, and I’m always looking to learn something new—whether it’s coding a tool, designing a dashboard, or solving a tough algorithmic challenge.
+            I enjoy building full-stack applications, exploring quantitative finance, and uncovering insights through data analysis. Passionate about bridging tech and impact, I've interned across healthtech and fintech, and I'm always looking to learn something new—whether it's coding a tool, designing a dashboard, or solving a tough algorithmic challenge.
           </div>
           <div className="about-tags">
             <span className="about-tag"># Development</span>
@@ -78,10 +96,8 @@ const Me = () => {
               <span className="funfacts-title-text">Fun Facts</span>
             </div>
             <ul className="funfacts-list">
-              <li> I’ve lived in Korea <img src={koreaFlag} alt="Korea" style={{width:'26px',verticalAlign:'middle',margin:'0 2px'}}/>,
-                Singapore <img src={singaporeFlag} alt="Singapore" style={{width:'22px',verticalAlign:'middle',margin:'0 2px'}}/>,
-                and now studying in the U.S <img src={usFlag} alt="US" style={{width:'22px',verticalAlign:'middle',margin:'0 2px'}}/>!</li>
-              <li> I don’t eat cheeze... 🧀 (if this is a surprize!)</li>
+              <li> I've lived in Korea 🇰🇷, Singapore 🇸🇬, and now studying in the U.S 🇺🇸!</li>
+              <li> I don't eat cheeze... 🧀 (if this is a surprize!)</li>
               <li> I love to sing! 🎤</li>
             </ul>
           </div>
@@ -89,6 +105,26 @@ const Me = () => {
             <div className="photogallery-title-row">
               <img src={cameraIcon} alt="camera" className="photogallery-title-icon" />
               <span className="photogallery-title-text">Photo Gallery</span>
+            </div>
+            <div className="photogallery-content">
+              <div className="slideshow-container">
+                <img 
+                  src={images[currentImageIndex]} 
+                  alt={`Photo ${currentImageIndex + 1}`} 
+                  className="slideshow-image"
+                  style={{
+                    objectPosition: currentImageIndex === 2 ? 'center 75%' : 'center center'
+                  }}
+                />
+                <div className="slideshow-indicators">
+                  {images.map((_, index) => (
+                    <div 
+                      key={index} 
+                      className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
