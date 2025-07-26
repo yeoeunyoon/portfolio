@@ -1,6 +1,7 @@
 import React from 'react';
 import FluidCursor from '../components/FluidCursor';
 import './Home.css';
+import avatarImg from '../images/avatar1.png';
 
 const Home: React.FC = () => {
   return (
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
           {/* 3D Avatar Image */}
           <div className="avatar-container">
             <img 
-              src="/src/images/avatar1.png" 
+              src={avatarImg} 
               alt="Jasmine's 3D Avatar" 
               className="avatar-image"
             />
