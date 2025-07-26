@@ -12,8 +12,8 @@ import wallPaper from '../images/wallpaper.png';
 const experiences = [
   {
     id: 1,
-    title: "Software Engineering Intern - LS Securities",
-    description: "Information System Team / Trading sub-team",
+    title: "Software Engineering Intern - LS Securities Co Ltd",
+    description: "Information System/ Trading team",
     time: "July 2025 - Aug 2025",
     image: lsImage
   },
@@ -55,7 +55,7 @@ const experiences = [
   {
     id: 7,
     title: "2025 IMC Prosperity Participant",
-    description: "Information System Team / Trading sub-team",
+    description: "Ranked in top 3% by deploying momentum and mean-reversion strategies for live algorithmic trading ",
     time: "April 2025",
     image: imcImage
   }
