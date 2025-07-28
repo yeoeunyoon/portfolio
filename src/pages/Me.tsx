@@ -16,7 +16,7 @@ import me3Img from '../images/my-image/me3.jpeg';
 import me4Img from '../images/my-image/me4.jpeg';
 import me5Img from '../images/my-image/me5.jpeg';
 import me6Img from '../images/my-image/me6.jpeg';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import hophacksLogo from '../images/hophacks-logo.png';
 import hopkinsQuantLogo from '../images/hopkins-quant-logo.png';
 import hummingJayLogo from '../images/humming-jay-logo.png';
