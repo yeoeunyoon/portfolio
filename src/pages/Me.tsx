@@ -16,7 +16,10 @@ import me3Img from '../images/my-image/me3.jpeg';
 import me4Img from '../images/my-image/me4.jpeg';
 import me5Img from '../images/my-image/me5.jpeg';
 import me6Img from '../images/my-image/me6.jpeg';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import hophacksLogo from '../images/hophacks-logo.png';
+import hopkinsQuantLogo from '../images/hopkins-quant-logo.png';
+import hummingJayLogo from '../images/humming-jay-logo.png';
 
 const Me = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -93,12 +96,21 @@ const Me = () => {
           <div className="funfacts-section frost-glass">
             <div className="funfacts-title-row">
               <img src={noteIcon} alt="note" className="funfacts-title-icon" />
-              <span className="funfacts-title-text">Fun Facts</span>
+              <span className="funfacts-title-text">Extra Curriculars</span>
             </div>
             <ul className="funfacts-list">
-              <li> I've lived in Korea 🇰🇷, Singapore 🇸🇬, and now studying in the U.S 🇺🇸!</li>
-              <li> I don't eat cheeze... 🧀 (if this is a surprize!)</li>
-              <li> I love to sing! 🎤</li>
+              <li>
+                <img src={hophacksLogo} alt="Hophacks" className="club-logo" />
+                Hophacks - Website Developer & Sponsors Director
+              </li>
+              <li>
+                <img src={hopkinsQuantLogo} alt="Hopkins Quant" className="club-logo" />
+                Hopkins Quant Trading - Team member
+              </li>
+              <li>
+                <img src={hummingJayLogo} alt="Humming Jay" className="club-logo" />
+                Humming Jay - Soprano Vocalist & Assistant Music Director
+              </li>
             </ul>
           </div>
           <div className="photogallery-section frost-glass">
