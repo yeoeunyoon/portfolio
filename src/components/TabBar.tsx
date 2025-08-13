@@ -38,7 +38,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
             className={`tab tab-2 ${activeTab === 'me' ? 'active' : ''}`}
             onClick={() => onTabChange('me')}
             >
-            <div className="tab-text">Me</div>
+            <div className="tab-text">About</div>
             </div>
             
             <div 
@@ -52,7 +52,7 @@ const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
             className={`tab tab-4 ${activeTab === 'project' ? 'active' : ''}`}
             onClick={() => onTabChange('project')}
             >
-            <div className="tab-text">Project</div>
+            <div className="tab-text">Projects</div>
             </div>
             
             <div 

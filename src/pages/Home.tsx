@@ -25,7 +25,7 @@ const Home: React.FC = () => {
           
           {/* Wanna know more about me? */}
           <h2 className="home-subtitle">
-            Wanna know more about me?
+            SWE / Data & Quant-leaning Engineer
           </h2>
           
           {/* Click under the bar or tap right */}
