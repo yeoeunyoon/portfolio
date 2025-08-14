@@ -284,19 +284,30 @@
       height: 60vh;
     }
     
-    .notification-base {
+    .notification-list {
       width: 90vw;
       max-width: 90vw;
     }
     
-    .notification-base .title-time-description {
+    .notification-base {
+      width: 90vw;
+      max-width: 90vw;
+      height: auto;
+      min-height: 100px;
+      padding: 18px 20px;
+    }
+    
+    .notification-content {
       width: calc(100% - 70px);
       max-width: calc(100% - 70px);
     }
     
-    .notification-base .title-time-description .title-time .title {
-      width: calc(100% - 74px);
-      max-width: calc(100% - 74px);
+    .notification-title {
+      font-size: 18px;
+    }
+    
+    .notification-description {
+      font-size: 15px;
     }
 }
 
@@ -306,22 +317,160 @@
       height: 50vh;
     }
     
+    .notification-list {
+      width: 95vw;
+      max-width: 95vw;
+      gap: 15px;
+    }
+    
     .notification-base {
       width: 95vw;
       max-width: 95vw;
-      padding: 10px 15px 10px 12px;
+      height: auto;
+      min-height: 90px;
+      padding: 15px 18px;
+      gap: 15px;
     }
     
-    .notification-base .image-container {
+    .notification-image {
+      width: 45px;
+      height: 45px;
+    }
+    
+    .notification-title {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    
+    .notification-subtitle {
+      font-size: 14px;
+    }
+    
+    .notification-description {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    
+    .notification-time {
+      font-size: 13px;
+    }
+    
+    .notification-time-container {
+      min-width: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-shadow {
+      width: 98vw;
+      height: 40vh;
+    }
+    
+    .notification-list {
+      width: 98vw;
+      max-width: 98vw;
+      gap: 12px;
+    }
+    
+    .notification-base {
+      width: 98vw;
+      max-width: 98vw;
+      height: auto;
+      min-height: 80px;
+      padding: 12px 15px;
+      gap: 12px;
+      border-radius: 20px;
+    }
+    
+    .notification-image {
       width: 40px;
       height: 40px;
+      border-radius: 8px;
     }
     
-    .notification-base .title-time-description .title-time .title {
-      font-size: 16px;
+    .notification-title {
+      font-size: 15px;
+      line-height: 1.1;
     }
     
-    .notification-base .title-time-description .description {
+    .notification-subtitle {
+      font-size: 13px;
+    }
+    
+    .notification-description {
+      font-size: 13px;
+      line-height: 1.2;
+    }
+    
+    .notification-time {
+      font-size: 12px;
+    }
+    
+    .notification-time-container {
+      min-width: 60px;
+    }
+    
+    .notification-title-time {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    
+    .notification-time-container {
+      align-items: flex-start;
+      min-width: auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .experience-shadow {
+      width: 100vw;
+      height: 35vh;
+    }
+    
+    .notification-list {
+      width: 100vw;
+      max-width: 100vw;
+      gap: 10px;
+      padding: 0 10px;
+    }
+    
+    .notification-base {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      min-height: 75px;
+      padding: 10px 12px;
+      gap: 10px;
+      border-radius: 18px;
+    }
+    
+    .notification-image {
+      width: 35px;
+      height: 35px;
+      border-radius: 6px;
+    }
+    
+    .notification-title {
       font-size: 14px;
+      line-height: 1.1;
+    }
+    
+    .notification-subtitle {
+      font-size: 12px;
+    }
+    
+    .notification-description {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    
+    .notification-time {
+      font-size: 11px;
+    }
+    
+    .notification-content {
+      width: calc(100% - 50px);
+      max-width: calc(100% - 50px);
     }
 }
